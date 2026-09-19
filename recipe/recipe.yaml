@@ -28,7 +28,7 @@ requirements:
     - pkg-config
   host:
     - python
-    - maturin
+    - maturin >=1.9.3,<2.0
     - pip
   run:
     - python
