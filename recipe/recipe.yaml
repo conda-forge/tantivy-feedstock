@@ -13,8 +13,13 @@ source:
   sha256: 93519eb9f18c298a6779d132505d67f158741318413c181e9ec488381edf2721
 
 build:
-  number: 0
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
+  script:
+    content:
+      - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+      - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    env:
+      PYO3_USE_ABI3_FORWARD_COMPATIBILITY: 1
 
 requirements:
   build:
@@ -39,7 +44,9 @@ tests:
 about:
   summary: Python bindings for Tantivy
   license: MIT
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
   homepage: https://github.com/quickwit-oss/tantivy-py
 
 extra:
