@@ -16,7 +16,7 @@ index 246aad4..74b65fc 100644
  requires-python = ">=3.10"
  license = "MIT"
 -license-files = ["LICENSE"]
-+license-files = "LICENSE"
++license-files = { paths = ["LICENSE"] }
  authors = [
      { name = "Damir Jelić", email="poljar@termina.org.uk" },
      { name = "Caleb Hattingh", email = "code@cjrh.info" },
