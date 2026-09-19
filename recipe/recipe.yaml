@@ -11,8 +11,6 @@ package:
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/tantivy-${{ version }}.tar.gz
   sha256: 93519eb9f18c298a6779d132505d67f158741318413c181e9ec488381edf2721
-  patches:
-    - pyproject.patch
 
 build:
   number: 0
