@@ -15,10 +15,11 @@ source:
 build:
   number: 1
   script:
-    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  script_env:
-    - PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
+    content:
+      - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+      - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    env:
+      - PYO3_USE_ABI3_FORWARD_COMPATIBILITY=1
 
 requirements:
   build:
